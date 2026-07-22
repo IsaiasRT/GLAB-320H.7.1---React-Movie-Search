@@ -24,8 +24,28 @@ export default function App() {
   };
 
   // This will run on the first render but not on subsquent renders
-  useEffect(() => {
-    getMovie("Clueless");
+  const movies = [
+  "Clueless",
+  "Bugs",
+  "Titanic",
+  "The Matrix",
+  "Fight Club",
+  "Avatar",
+  "Jaws",
+  "The Lion King",
+  "Forrest Gump",
+  "Interstellar",
+  "Shrek",
+  "Frozen",
+  "The Dark Knight",
+];
+
+useEffect(() => {
+  const randomMovie =
+    movies[Math.floor(Math.random() * movies.length)];
+
+  getMovie(randomMovie);
+
   }, []);
 
   return (
